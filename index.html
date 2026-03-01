@@ -3,77 +3,50 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Justin Schuerch — Apps</title>
-  <meta name="description" content="Justin Schuerch — Independent developer. Apps and privacy policy links." />
+  <title>Justin Schuerch</title>
   <style>
-    :root { color-scheme: light dark; }
     body {
       margin: 0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      line-height: 1.5;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: #f5f5f5;
+      text-align: center;
     }
-    .wrap { max-width: 880px; margin: 0 auto; padding: 40px 20px; }
     .card {
-      border: 1px solid rgba(127,127,127,.25);
+      background: white;
+      padding: 40px;
       border-radius: 16px;
-      padding: 18px 18px;
-      margin-top: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     }
-    .title { font-size: 28px; margin: 0 0 6px; }
-    .sub { margin: 0; opacity: .8; }
-    .grid { display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: 18px; }
-    @media (min-width: 720px) { .grid { grid-template-columns: 1fr 1fr; } }
-    a { text-decoration: none; }
-    .btns { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
-    .btn {
+    h1 {
+      margin-top: 0;
+    }
+    a.button {
       display: inline-block;
-      padding: 10px 12px;
-      border-radius: 12px;
-      border: 1px solid rgba(127,127,127,.35);
-      background: rgba(127,127,127,.08);
-      color: inherit;
+      margin-top: 20px;
+      padding: 12px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      background: #111;
+      color: white;
+      font-weight: 500;
     }
-    .btn:hover { background: rgba(127,127,127,.14); }
-    .muted { opacity: .75; font-size: 14px; }
-    .footer { margin-top: 28px; opacity: .7; font-size: 13px; }
-    code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+    a.button:hover {
+      opacity: 0.85;
+    }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <h1 class="title">Justin Schuerch</h1>
-    <p class="sub">Independent developer (Switzerland). Apps, support, and privacy info.</p>
+  <div class="card">
+    <h1>Justin Schuerch</h1>
+    <p>Independent Android Developer</p>
 
-    <div class="grid">
-      <div class="card">
-        <h2 style="margin:0 0 6px;">HourLog — Hours & Pay Tracker</h2>
-        <p class="muted" style="margin:0;">Simple time tracking & wage calculation.</p>
-        <div class="btns">
-          <a class="btn" href="/apps/hourlog/">App page</a>
-          <a class="btn" href="/apps/hourlog/privacy/">Privacy policy</a>
-          <!-- Add Play Store link once public -->
-          <!-- <a class="btn" href="https://play.google.com/store/apps/details?id=ch.justin.hourlog">Google Play</a> -->
-        </div>
-      </div>
-
-      <div class="card">
-        <h2 style="margin:0 0 6px;">Support</h2>
-        <p class="muted" style="margin:0;">Contact, policy, and compliance links.</p>
-        <div class="btns">
-          <a class="btn" href="mailto:justin.schuerch@gmx.ch">Email</a>
-          <a class="btn" href="/app-ads.txt">app-ads.txt</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer">
-      <div>© <span id="y"></span> Justin Schuerch</div>
-      <div class="muted">This site is hosted on GitHub Pages. <code>jschuerch.com</code></div>
-    </div>
+    <a class="button" href="/apps/hourlog/privacy/">
+      View Privacy Policy (HourLog)
+    </a>
   </div>
-
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>jschuerch.com</title>
+  <meta name="description" content="Jschuerch Apps — simple online tools and SaaS projects by Justin Schuerch." />
+  <style>
+    :root {
+      --bg: #0b1220;
+      --card: #121b2e;
+      --card-2: #0f1728;
+      --text: #f3f4f6;
+      --muted: #b8c0cc;
+      --line: rgba(255,255,255,0.08);
+      --primary: #ffffff;
+      --primary-text: #0b1220;
+      --secondary: rgba(255,255,255,0.04);
+      --secondary-hover: rgba(255,255,255,0.08);
+      --shadow: 0 18px 40px rgba(0,0,0,0.25);
+      --max: 920px;
+      --radius: 20px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(45,72,130,0.22), transparent 35%),
+        var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 64px 20px 80px;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 42px;
+    }
+
+    .hero h1 {
+      margin: 0 0 10px;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+
+    .hero p {
+      margin: 0 auto;
+      max-width: 640px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .grid {
+      display: grid;
+      gap: 22px;
+    }
+
+    .tool-card {
+      background: linear-gradient(180deg, var(--card), var(--card-2));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .tool-card h2 {
+      margin: 0 0 8px;
+      font-size: 1.6rem;
+      line-height: 1.2;
+    }
+
+    .tool-card p {
+      margin: 0 0 22px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 12px 18px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: 0.18s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: var(--primary-text);
+      min-width: 220px;
+      flex: 1 1 240px;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      opacity: 0.96;
+    }
+
+    .btn-secondary {
+      background: var(--secondary);
+      color: var(--text);
+      border-color: var(--line);
+      flex: 0 1 auto;
+      min-width: 120px;
+    }
+
+    .btn-secondary:hover {
+      background: var(--secondary-hover);
+    }
+
+    .footer {
+      margin-top: 34px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .footer a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 640px) {
+      .tool-card {
+        padding: 22px;
+      }
+
+      .actions {
+        flex-direction: column;
+      }
+
+      .btn,
+      .btn-primary,
+      .btn-secondary {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <h1>Jschuerch Apps</h1>
+      <p>
+        Small, useful online tools built by Justin Schuerch.
+        More apps and simple SaaS projects will be added here over time.
+      </p>
+    </section>
+
+    <section class="grid">
+      <article class="tool-card">
+        <h2>Etsy Title + Tags Generator</h2>
+        <p>
+          Generate Etsy-ready title ideas, tags, and descriptions for printable listings.
+        </p>
+
+        <div class="actions">
+          <a class="btn btn-primary" href="https://YOUR-STREAMLIT-URL.streamlit.app" target="_blank" rel="noopener noreferrer">
+            Open App
+          </a>
+          <a class="btn btn-secondary" href="/apps/Etsy-title-tags-generator/privacy/privacy.html">
+            Privacy
+          </a>
+          <a class="btn btn-secondary" href="/apps/Etsy-title-tags-generator/terms/terms.html">
+            Terms
+          </a>
+        </div>
+      </article>
+    </section>
+
+    <div class="footer">
+      jschuerch.com
+    </div>
+  </main>
+</body>
+</html>

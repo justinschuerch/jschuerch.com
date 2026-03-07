@@ -1,1 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Etsy Title + Tags Generator</title>
+  <meta
+    name="description"
+    content="Learn what Etsy Title + Tags Generator does, who it helps, and how to use it for Etsy listing ideas."
+  />
+  <style>
+    :root {
+      --bg: #0b1220;
+      --card: #121b2e;
+      --text: #f3f4f6;
+      --muted: #b8c0cc;
+      --line: rgba(255,255,255,0.1);
+      --link: #7cc2ff;
+      --max: 860px;
+    }
 
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 48px 20px 80px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 32px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    h1, h2 {
+      line-height: 1.2;
+      margin-top: 0;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      margin-top: 34px;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    p, li {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-top: 0;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .top-link {
+      display: inline-block;
+      margin-bottom: 18px;
+      font-size: 0.95rem;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 24px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 11px 16px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: 0.18s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: #ffffff;
+      color: #0b1220;
+      min-width: 180px;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      opacity: 0.96;
+      text-decoration: none;
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      border-color: var(--line);
+      min-width: 120px;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.08);
+      text-decoration: none;
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 22px;
+      }
+
+      .actions {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn,
+      .btn-primary,
+      .btn-secondary {
+        width: 160px;
+        min-width: 160px;
+        height: 48px;
+        min-height: 48px;
+        padding: 11px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="top-link" href="/">← Back to jschuerch.com</a>
+
+    <div class="card">
+      <h1>About Etsy Title + Tags Generator</h1>
+      <div class="meta">
+        Simple listing text ideas for Etsy sellers
+      </div>
+
+      <p>
+        Etsy Title + Tags Generator is a small tool that helps create Etsy-ready title ideas,
+        tag ideas, and listing description drafts for printable and digital products.
+      </p>
+
+      <p>
+        It is designed for sellers who want a faster way to brainstorm listing text without
+        starting from a blank page every time.
+      </p>
+
+      <h2>What it does</h2>
+      <ul>
+        <li>Generates Etsy title ideas</li>
+        <li>Suggests relevant tags for listings</li>
+        <li>Creates simple listing description drafts</li>
+        <li>Helps with brainstorming for printable and digital products</li>
+      </ul>
+
+      <h2>Who it is for</h2>
+      <p>
+        This tool is mainly useful for Etsy sellers working with products such as:
+      </p>
+      <ul>
+        <li>meal planners</li>
+        <li>cleaning checklists</li>
+        <li>habit trackers</li>
+        <li>budget planners</li>
+        <li>digital downloads</li>
+        <li>other printable products</li>
+      </ul>
+
+      <h2>How to use it</h2>
+      <p>
+        Enter your product idea or listing details, review the generated results, and then edit
+        them to match your own shop, product style, and audience.
+      </p>
+
+      <h2>Important note</h2>
+      <p>
+        The tool provides suggestions only. You should always review and adjust any generated
+        titles, tags, or descriptions before using them in a live Etsy listing.
+      </p>
+
+      <div class="actions">
+        <a class="btn btn-primary" href="https://etsy-title-tags-generator.streamlit.app/" target="_blank" rel="noopener noreferrer">
+          Open App
+        </a>
+        <a class="btn btn-secondary" href="/apps/etsy-title-tags-generator/privacy/">
+          Privacy
+        </a>
+        <a class="btn btn-secondary" href="/apps/etsy-title-tags-generator/terms/">
+          Terms
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

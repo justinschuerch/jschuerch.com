@@ -3,8 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>jschuerch.com</title>
-  <meta name="description" content="Jschuerch Apps — simple online tools by Justin Schuerch." />
+  <title>JSchuerch Apps | Practical Online Tools</title>
+  <meta
+    name="description"
+    content="JSchuerch Apps is a growing collection of practical online tools for creators, sellers, and everyday work."
+  />
   <style>
     :root {
       --bg: #0b1220;
@@ -54,10 +57,14 @@
 
     .hero p {
       margin: 0 auto;
-      max-width: 640px;
+      max-width: 700px;
       color: var(--muted);
       font-size: 1.05rem;
       line-height: 1.7;
+    }
+
+    .hero .lead {
+      margin-top: 14px;
     }
 
     .grid {
@@ -65,7 +72,8 @@
       gap: 22px;
     }
 
-    .tool-card {
+    .tool-card,
+    .info-card {
       background: linear-gradient(180deg, var(--card), var(--card-2));
       border: 1px solid var(--line);
       border-radius: var(--radius);
@@ -73,16 +81,22 @@
       box-shadow: var(--shadow);
     }
 
-    .tool-card h2 {
+    .tool-card h2,
+    .info-card h2 {
       margin: 0 0 8px;
       font-size: 1.6rem;
       line-height: 1.2;
     }
 
-    .tool-card p {
+    .tool-card p,
+    .info-card p {
       margin: 0 0 22px;
       color: var(--muted);
       line-height: 1.7;
+    }
+
+    .info-card {
+      margin-top: 24px;
     }
 
     .actions {
@@ -146,7 +160,8 @@
     }
 
     @media (max-width: 480px) {
-      .tool-card {
+      .tool-card,
+      .info-card {
         padding: 22px;
       }
 
@@ -158,8 +173,8 @@
       .btn,
       .btn-primary,
       .btn-secondary {
-        width: 160px;
-        min-width: 160px;
+        width: 170px;
+        min-width: 170px;
         height: 48px;
         min-height: 48px;
         padding: 11px 16px;
@@ -175,9 +190,13 @@
 <body>
   <main class="wrap">
     <section class="hero">
-      <h1>Jschuerch Apps</h1>
+      <h1>JSchuerch Apps</h1>
       <p>
-        Small, useful online tools built by Justin Schuerch.
+        Small, practical online tools for creators, sellers, and everyday work.
+      </p>
+      <p class="lead">
+        A growing collection of lightweight apps built to save time on writing, organization,
+        research, and repetitive tasks.
       </p>
     </section>
 
@@ -185,7 +204,8 @@
       <article class="tool-card">
         <h2>Etsy Title + Tags Generator</h2>
         <p>
-          Generate Etsy titles, tags, and listing descriptions for printable and digital products.
+          Generate Etsy title ideas, tags, and listing description drafts for printables
+          and digital products.
         </p>
 
         <div class="actions">
@@ -193,7 +213,7 @@
             Open App
           </a>
           <a class="btn btn-secondary" href="/apps/etsy-title-tags-generator/about/">
-            About
+            Learn More
           </a>
           <a class="btn btn-secondary" href="/apps/etsy-title-tags-generator/privacy/">
             Privacy
@@ -203,6 +223,14 @@
           </a>
         </div>
       </article>
+    </section>
+
+    <section class="info-card">
+      <h2>Why this site exists</h2>
+      <p>
+        JSchuerch Apps is a growing hub for simple web tools that solve small but real problems.
+        Each app is designed to be fast, focused, and easy to use.
+      </p>
     </section>
 
     <div class="footer">

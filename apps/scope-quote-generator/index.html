@@ -1,1 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scope &amp; Quote Generator | Create Client-Ready Project Scopes and Quotes</title>
+  <meta
+    name="description"
+    content="Create client-ready project scopes, deliverables, timelines, revisions, and quote summaries for freelance and agency work."
+  />
+  <link rel="canonical" href="https://jschuerch.com/apps/scope-quote-generator/" />
 
+  <meta property="og:title" content="Scope &amp; Quote Generator" />
+  <meta
+    property="og:description"
+    content="Create client-ready project scopes, deliverables, timelines, revisions, and quote summaries for freelance and agency work."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://jschuerch.com/apps/scope-quote-generator/" />
+
+  <style>
+    :root {
+      --bg: #0b1220;
+      --card: #121b2e;
+      --text: #f3f4f6;
+      --muted: #b8c0cc;
+      --line: rgba(255,255,255,0.1);
+      --link: #7cc2ff;
+      --max: 860px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 48px 20px 80px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 32px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    h1, h2, h3 {
+      line-height: 1.2;
+      margin-top: 0;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      margin-top: 34px;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    p, li {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-top: 0;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .top-link {
+      display: inline-block;
+      margin-bottom: 18px;
+      font-size: 0.95rem;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-bottom: 18px;
+    }
+
+    .intro {
+      margin-bottom: 20px;
+    }
+
+    .example-box,
+    .faq-item {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      margin-top: 14px;
+      background: rgba(255,255,255,0.02);
+    }
+
+    .faq-item p:last-child,
+    .example-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .actions-top {
+      margin-top: 18px;
+      margin-bottom: 8px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 11px 16px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: 0.18s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: #ffffff;
+      color: #0b1220;
+      min-width: 180px;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      opacity: 0.96;
+      text-decoration: none;
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      border-color: var(--line);
+      min-width: 120px;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.08);
+      text-decoration: none;
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 22px;
+      }
+
+      .actions {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn,
+      .btn-primary,
+      .btn-secondary {
+        width: 170px;
+        min-width: 170px;
+        height: 48px;
+        min-height: 48px;
+        padding: 11px 16px;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Scope & Quote Generator",
+    "url": "https://jschuerch.com/apps/scope-quote-generator/",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "description": "Create client-ready project scopes, deliverables, timelines, revisions, and quote summaries for freelance and agency work.",
+    "publisher": {
+      "@type": "Person",
+      "name": "Justin Schuerch"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Who is this tool for?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It is built for freelancers, consultants, and small agencies who want a faster way to create clear project scopes and client-ready quote text."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does the tool generate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It generates a scope of work, deliverables list, timeline summary, revisions section, quote summary, and client-ready project text."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use the generated text as-is?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can use it as a starting point, but it is best to review and adjust the final wording so it matches your project, pricing, and client communication style."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this only for web designers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. It can also be useful for freelancers and agencies offering design, development, marketing, writing, consulting, and other client-based services."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <a class="top-link" href="/">← Back to jschuerch.com</a>
+
+    <div class="card">
+      <h1>Scope &amp; Quote Generator</h1>
+      <div class="meta">
+        Create client-ready project scopes, deliverables, timelines, revisions, and quote summaries for freelance and agency work.
+      </div>
+
+      <div class="intro">
+        <p>
+          Scope &amp; Quote Generator is a practical tool for freelancers, consultants, and small agencies
+          who want a faster way to turn rough project details into clear client-ready text.
+        </p>
+
+        <p>
+          It helps you structure project scope, included deliverables, timelines, revision terms, and quote
+          wording so you can present work more clearly and reduce back-and-forth with clients.
+        </p>
+      </div>
+
+      <div class="actions actions-top">
+        <a class="btn btn-primary" href="https://scope-quote-generator.streamlit.app/" target="_blank" rel="noopener noreferrer">
+          Open App
+        </a>
+      </div>
+
+      <h2>What this tool helps with</h2>
+      <ul>
+        <li>Create a clear scope of work for client projects</li>
+        <li>Generate a deliverables list from rough project inputs</li>
+        <li>Summarize timelines and revision terms more clearly</li>
+        <li>Turn project details into a cleaner quote summary</li>
+        <li>Draft client-ready wording faster without starting from scratch</li>
+      </ul>
+
+      <h2>Best for</h2>
+      <p>This tool is mainly useful for people offering services such as:</p>
+      <ul>
+        <li>website design</li>
+        <li>web development</li>
+        <li>copywriting</li>
+        <li>marketing services</li>
+        <li>consulting</li>
+        <li>branding projects</li>
+        <li>other freelance or agency work</li>
+      </ul>
+
+      <h2>How to use it</h2>
+      <p>
+        Enter your service type, client type, project type, price, timeline, and included work. The tool
+        then generates a structured scope and quote draft that you can review, adjust, and use as a starting
+        point for your own client communication.
+      </p>
+
+      <h2>Example output</h2>
+      <div class="example-box">
+        <p><strong>Example service:</strong> Website design</p>
+        <p><strong>Example client:</strong> Local business</p>
+        <p><strong>Example project:</strong> 5-page business website</p>
+        <p><strong>Sample scope line:</strong> This project covers website design for a local business and is focused on delivering a 5-page business website within the agreed scope and timeline.</p>
+        <p><strong>Sample deliverables:</strong> Homepage design, services page, about page, contact page, mobile responsive layout</p>
+        <p><strong>Sample quote summary:</strong> Service: Website Design | Project fee: $1,500 | Estimated timeline: 3 weeks</p>
+      </div>
+
+      <div class="example-box">
+        <p><strong>Example service:</strong> Copywriting</p>
+        <p><strong>Example client:</strong> SaaS startup</p>
+        <p><strong>Example project:</strong> Website copy rewrite</p>
+        <p><strong>Sample scope line:</strong> This project covers copywriting for a SaaS startup and is focused on delivering a website copy rewrite with the agreed project scope and timeline.</p>
+        <p><strong>Sample deliverables:</strong> Homepage rewrite, pricing page copy, about page copy, CTA refinement, revision round</p>
+        <p><strong>Sample quote summary:</strong> Service: Copywriting | Project fee: $900 | Estimated timeline: 10 days</p>
+      </div>
+
+      <h2>Why freelancers use a scope and quote generator</h2>
+      <p>
+        Writing scope and quote drafts from scratch can be repetitive, especially when you work on similar
+        client projects over and over. A scope and quote generator helps you move faster, stay more consistent,
+        and communicate project terms more clearly without rebuilding the same structure every time.
+      </p>
+
+      <h2>FAQ</h2>
+
+      <div class="faq-item">
+        <p><strong>Who is this tool for?</strong></p>
+        <p>
+          It is built for freelancers, consultants, and small agencies who want a faster way to create clear
+          project scopes and client-ready quote text.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <p><strong>What does the tool generate?</strong></p>
+        <p>
+          It generates a scope of work, deliverables list, timeline summary, revisions section, quote summary,
+          and client-ready project text.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <p><strong>Can I use the generated text as-is?</strong></p>
+        <p>
+          You can use it as a starting point, but it is best to review and adjust the final wording so it matches
+          your project, pricing, and client communication style.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <p><strong>Is this only for web designers?</strong></p>
+        <p>
+          No. It can also be useful for freelancers and agencies offering design, development, marketing, writing,
+          consulting, and other client-based services.
+        </p>
+      </div>
+
+      <h2>Important note</h2>
+      <p>
+        The tool provides draft text and structured suggestions only. Always review and adjust generated scope,
+        pricing, revision, and quote wording before sending it to a client.
+      </p>
+
+      <div class="actions">
+        <a class="btn btn-primary" href="https://scope-quote-generator.streamlit.app/" target="_blank" rel="noopener noreferrer">
+          Open App
+        </a>
+        <a class="btn btn-secondary" href="/apps/scope-quote-generator/privacy/">
+          Privacy
+        </a>
+        <a class="btn btn-secondary" href="/apps/scope-quote-generator/terms/">
+          Terms
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

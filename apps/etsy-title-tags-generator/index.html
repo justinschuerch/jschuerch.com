@@ -1,126 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>JSchuerch Apps | Practical Online Tools</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Etsy Title + Tags Generator | Listing Ideas for Digital Products</title>
   <meta
     name="description"
-    content="JSchuerch Apps is a growing collection of practical online tools for creators, sellers, and everyday work."
+    content="Generate Etsy title ideas, tags, and listing description drafts for printables and digital products. A practical tool for Etsy sellers who want faster listing creation and better SEO support."
   />
-  <link rel="canonical" href="https://jschuerch.com/" />
+  <link rel="canonical" href="https://jschuerch.com/apps/etsy-title-tags-generator/" />
 
-  <meta property="og:title" content="JSchuerch Apps | Practical Online Tools" />
+  <meta property="og:title" content="Etsy Title + Tags Generator" />
   <meta
     property="og:description"
-    content="A growing collection of practical online tools for creators, sellers, and everyday work."
+    content="Generate Etsy title ideas, tags, and listing description drafts for printables and digital products."
   />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://jschuerch.com/" />
+  <meta property="og:url" content="https://jschuerch.com/apps/etsy-title-tags-generator/" />
   <meta property="og:site_name" content="JSchuerch Apps" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="JSchuerch Apps | Practical Online Tools" />
+  <meta name="twitter:title" content="Etsy Title + Tags Generator" />
   <meta
     name="twitter:description"
-    content="A growing collection of practical online tools for creators, sellers, and everyday work."
+    content="Generate Etsy title ideas, tags, and listing description drafts for printables and digital products."
   />
 
   <style>
     :root {
       --bg: #0b1220;
       --card: #121b2e;
-      --card-2: #0f1728;
       --text: #f3f4f6;
       --muted: #b8c0cc;
-      --line: rgba(255,255,255,0.08);
-      --primary: #ffffff;
-      --primary-text: #0b1220;
-      --secondary: rgba(255,255,255,0.04);
-      --secondary-hover: rgba(255,255,255,0.08);
-      --shadow: 0 18px 40px rgba(0,0,0,0.25);
-      --max: 920px;
-      --radius: 20px;
+      --line: rgba(255,255,255,0.1);
+      --link: #7cc2ff;
+      --max: 860px;
     }
 
     * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      background:
-        radial-gradient(circle at top, rgba(45,72,130,0.22), transparent 35%),
-        var(--bg);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
       color: var(--text);
-      min-height: 100vh;
+      line-height: 1.7;
     }
 
     .wrap {
       max-width: var(--max);
       margin: 0 auto;
-      padding: 64px 20px 80px;
+      padding: 48px 20px 80px;
     }
 
-    .hero {
-      text-align: center;
-      margin-bottom: 42px;
+    .top-link {
+      display: inline-block;
+      margin-bottom: 18px;
+      font-size: 0.95rem;
+      color: var(--link);
+      text-decoration: none;
     }
 
-    .hero h1 {
-      margin: 0 0 10px;
-      font-size: clamp(2.2rem, 5vw, 3.4rem);
-      line-height: 1.05;
-      letter-spacing: -0.03em;
+    .top-link:hover {
+      text-decoration: underline;
     }
 
-    .hero p {
-      margin: 0 auto;
-      max-width: 700px;
-      color: var(--muted);
-      font-size: 1.05rem;
-      line-height: 1.7;
-    }
-
-    .hero .lead {
-      margin-top: 14px;
-    }
-
-    .grid {
-      display: grid;
-      gap: 22px;
-    }
-
-    .tool-card,
-    .info-card {
-      background: linear-gradient(180deg, var(--card), var(--card-2));
+    .card {
+      background: var(--card);
       border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 28px;
-      box-shadow: var(--shadow);
+      border-radius: 18px;
+      padding: 32px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     }
 
-    .tool-card h2,
-    .info-card h2 {
-      margin: 0 0 8px;
-      font-size: 1.6rem;
+    h1, h2 {
       line-height: 1.2;
+      margin-top: 0;
     }
 
-    .tool-card p,
-    .info-card p {
-      margin: 0 0 22px;
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      margin-top: 34px;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    p, li {
       color: var(--muted);
-      line-height: 1.7;
+      font-size: 1rem;
     }
 
-    .info-card {
-      margin-top: 24px;
+    ul {
+      padding-left: 20px;
+      margin-top: 0;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-bottom: 18px;
+    }
+
+    .intro {
+      margin-bottom: 20px;
+    }
+
+    .example-box,
+    .faq-item {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      margin-top: 14px;
+      background: rgba(255,255,255,0.02);
+    }
+
+    .example-box p:last-child,
+    .faq-item p:last-child {
+      margin-bottom: 0;
     }
 
     .actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
+      margin-top: 26px;
+    }
+
+    .actions-top {
+      margin-top: 18px;
+      margin-bottom: 8px;
     }
 
     .btn {
@@ -137,11 +159,9 @@
     }
 
     .btn-primary {
-      background: var(--primary);
-      color: var(--primary-text);
-      min-width: 220px;
-      flex: 1 1 240px;
-      min-height: 50px;
+      background: #ffffff;
+      color: #0b1220;
+      min-width: 180px;
     }
 
     .btn-primary:hover {
@@ -151,37 +171,19 @@
     }
 
     .btn-secondary {
-      background: var(--secondary);
+      background: rgba(255,255,255,0.04);
       color: var(--text);
       border-color: var(--line);
-      flex: 0 1 auto;
       min-width: 120px;
     }
 
     .btn-secondary:hover {
-      background: var(--secondary-hover);
+      background: rgba(255,255,255,0.08);
       text-decoration: none;
-    }
-
-    .footer {
-      margin-top: 34px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .footer a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .footer a:hover {
-      text-decoration: underline;
     }
 
     @media (max-width: 480px) {
-      .tool-card,
-      .info-card {
+      .card {
         padding: 22px;
       }
 
@@ -199,72 +201,226 @@
         min-height: 48px;
         padding: 11px 16px;
       }
-
-      .btn-primary,
-      .btn-secondary {
-        flex: 0 0 auto;
-      }
     }
   </style>
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "JSchuerch Apps",
-    "url": "https://jschuerch.com/"
+    "@type": "WebApplication",
+    "name": "Etsy Title + Tags Generator",
+    "url": "https://jschuerch.com/apps/etsy-title-tags-generator/",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "description": "Generate Etsy title ideas, tags, and listing description drafts for printables and digital products.",
+    "publisher": {
+      "@type": "Person",
+      "name": "Justin Schuerch"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does this tool help with Etsy SEO?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It helps brainstorm titles, tags, and descriptions that are better aligned with your product type and audience. You should still review and refine the final wording before publishing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it only for printables?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. It is especially useful for printables and digital downloads, but it can also help with other Etsy listing ideas where you need better titles and tags."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use the generated text directly?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can use it as a starting point, but it is best to edit the output so it fits your exact product, style, and shop voice."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it create Etsy descriptions too?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The tool can generate simple description drafts in addition to title and tag ideas."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://jschuerch.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Apps",
+        "item": "https://jschuerch.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Etsy Title + Tags Generator",
+        "item": "https://jschuerch.com/apps/etsy-title-tags-generator/"
+      }
+    ]
   }
   </script>
 </head>
 <body>
-  <main class="wrap">
-    <section class="hero">
-      <h1>JSchuerch Apps</h1>
-      <p>
-        Small, practical online tools for creators, sellers, and everyday work.
-      </p>
-      <p class="lead">
-        A growing collection of lightweight apps built to save time on writing, organization,
-        research, and repetitive tasks.
-      </p>
-    </section>
+  <div class="wrap">
+    <a class="top-link" href="/">← Back to jschuerch.com</a>
 
-    <section class="grid">
-      <article class="tool-card">
-        <h2>Etsy Title + Tags Generator</h2>
+    <div class="card">
+      <h1>Etsy Title + Tags Generator</h1>
+      <div class="meta">
+        Generate Etsy title ideas, tags, and listing description drafts for printables and digital products.
+      </div>
+
+      <div class="intro">
         <p>
-          Generate Etsy title ideas, tags, and listing description drafts for printables
-          and digital products.
+          Etsy Title + Tags Generator is a practical tool for Etsy sellers who want faster listing creation.
+          It helps you brainstorm title ideas, relevant tags, and simple description drafts for printable
+          and digital products without starting from scratch every time.
         </p>
 
-        <div class="actions">
-          <a class="btn btn-primary" href="https://etsy-title-tags-generator.streamlit.app/" target="_blank" rel="noopener noreferrer">
-            Open App
-          </a>
-          <a class="btn btn-secondary" href="/apps/etsy-title-tags-generator/">
-            Learn More
-          </a>
-          <a class="btn btn-secondary" href="/apps/etsy-title-tags-generator/privacy/">
-            Privacy
-          </a>
-          <a class="btn btn-secondary" href="/apps/etsy-title-tags-generator/terms/">
-            Terms
-          </a>
-        </div>
-      </article>
-    </section>
+        <p>
+          It is especially useful for sellers working on Etsy listings for digital downloads, printable
+          planners, trackers, checklists, and similar products where wording, search intent, and keyword
+          ideas matter.
+        </p>
+      </div>
 
-    <section class="info-card">
-      <h2>Why this site exists</h2>
+      <div class="actions actions-top">
+        <a class="btn btn-primary" href="https://etsy-title-tags-generator.streamlit.app/" target="_blank" rel="noopener noreferrer">
+          Open App
+        </a>
+      </div>
+
+      <h2>What this tool helps with</h2>
+      <ul>
+        <li>Generate Etsy title ideas for new listings</li>
+        <li>Suggest relevant Etsy tags for printable and digital products</li>
+        <li>Create simple listing description drafts</li>
+        <li>Speed up brainstorming when you are stuck on wording</li>
+        <li>Support Etsy SEO research by giving you a starting point for titles and keywords</li>
+      </ul>
+
+      <h2>Best for</h2>
+      <p>This tool is mainly useful for Etsy sellers creating products such as:</p>
+      <ul>
+        <li>meal planners</li>
+        <li>cleaning checklists</li>
+        <li>habit trackers</li>
+        <li>budget planners</li>
+        <li>printable templates</li>
+        <li>digital downloads</li>
+        <li>other printable products</li>
+      </ul>
+
+      <h2>How to use it</h2>
       <p>
-        JSchuerch Apps is a growing hub for simple web tools that solve small but real problems.
-        Each app is designed to be fast, focused, and easy to use.
+        Enter your product idea or listing details, review the generated output, and then edit the results
+        so they match your product, target customer, and shop style. The goal is not to publish every result
+        exactly as generated, but to help you move faster and refine your Etsy listing text more easily.
       </p>
-    </section>
 
-    <div class="footer">
-      jschuerch.com
+      <h2>Example output</h2>
+
+      <div class="example-box">
+        <p><strong>Example product idea:</strong> Budget planner for moms</p>
+        <p><strong>Sample Etsy title idea:</strong> Printable Budget Planner for Moms | Monthly Finance Tracker | Digital Download PDF</p>
+        <p><strong>Sample Etsy tags:</strong> budget planner, mom planner, finance printable, monthly budget, printable pdf, money tracker</p>
+        <p><strong>Sample description start:</strong> Stay organized with a printable budget planner designed to help busy moms track spending, savings, and monthly goals.</p>
+      </div>
+
+      <div class="example-box">
+        <p><strong>Example product idea:</strong> Cleaning checklist</p>
+        <p><strong>Sample Etsy title idea:</strong> Printable Cleaning Checklist | Home Cleaning Planner | Editable Household Checklist PDF</p>
+        <p><strong>Sample Etsy tags:</strong> cleaning checklist, cleaning planner, home printable, household organizer, editable pdf, cleaning schedule</p>
+        <p><strong>Sample description start:</strong> Organize your routine with a printable cleaning checklist designed to simplify weekly and monthly household tasks.</p>
+      </div>
+
+      <h2>Why sellers use an Etsy title and tags generator</h2>
+      <p>
+        Writing Etsy listings can be repetitive, especially when you are creating multiple products in the same niche.
+        A title and tags generator can help you brainstorm faster, test different wording, and build stronger drafts
+        for your product listings. It is not a replacement for reviewing your keywords carefully, but it can make the
+        process much easier.
+      </p>
+
+      <h2>FAQ</h2>
+
+      <div class="faq-item">
+        <p><strong>Does this tool help with Etsy SEO?</strong></p>
+        <p>
+          It can help with brainstorming titles, tags, and descriptions that are more aligned with your product
+          type and audience. You should still review and refine the final wording before publishing.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <p><strong>Is it only for printables?</strong></p>
+        <p>
+          No. It is especially useful for printables and digital downloads, but it can also help with other Etsy
+          listing ideas where you need better titles and tags.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <p><strong>Can I use the generated text directly?</strong></p>
+        <p>
+          You can use it as a starting point, but it is best to edit the output so it fits your exact product,
+          style, and shop voice.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <p><strong>Does it create Etsy descriptions too?</strong></p>
+        <p>
+          Yes. The tool can generate simple description drafts in addition to title and tag ideas.
+        </p>
+      </div>
+
+      <h2>Important note</h2>
+      <p>
+        The tool provides suggestions only. Always review and adjust generated titles, tags, and descriptions
+        before using them in a live Etsy listing.
+      </p>
+
+      <div class="actions">
+        <a class="btn btn-primary" href="https://etsy-title-tags-generator.streamlit.app/" target="_blank" rel="noopener noreferrer">
+          Open App
+        </a>
+        <a class="btn btn-secondary" href="/apps/etsy-title-tags-generator/privacy/">
+          Privacy
+        </a>
+        <a class="btn btn-secondary" href="/apps/etsy-title-tags-generator/terms/">
+          Terms
+        </a>
+      </div>
     </div>
-  </main>
+  </div>
 </body>
 </html>

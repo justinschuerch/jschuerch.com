@@ -38,21 +38,23 @@
     }
 
     .top-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
       margin-bottom: 18px;
+      font-size: 0.95rem;
+      color: var(--muted);
     }
 
-    .top-link {
-      display: inline-block;
-      font-size: 0.95rem;
+    .top-actions a {
       color: var(--link);
       text-decoration: none;
     }
 
-    .top-link:hover {
+    .top-actions a:hover {
       text-decoration: underline;
+    }
+
+    .divider {
+      margin: 0 8px;
+      color: var(--muted);
     }
 
     .card {
@@ -103,24 +105,14 @@
       font-size: 0.95rem;
       margin-bottom: 24px;
     }
-
-    @media (max-width: 480px) {
-      .card {
-        padding: 22px;
-      }
-
-      .top-actions {
-        flex-direction: column;
-        gap: 10px;
-      }
-    }
   </style>
 </head>
 <body>
   <div class="wrap">
     <div class="top-actions">
-      <a class="top-link" href="/apps/etsy-title-tags-generator/">← Back to Etsy Title + Tags Generator</a>
-      <a class="top-link" href="https://etsy-title-tags-generator.streamlit.app/" target="_blank" rel="noopener noreferrer">Open App →</a>
+      <a href="/apps/etsy-title-tags-generator/">← Back to Etsy Title + Tags Generator</a>
+      <span class="divider">|</span>
+      <a href="https://etsy-title-tags-generator.streamlit.app/" target="_blank" rel="noopener noreferrer">Open App</a>
     </div>
 
     <div class="card">

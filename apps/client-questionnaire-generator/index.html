@@ -1,1 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client Questionnaire Generator | Create Client Intake and Discovery Questions</title>
+  <meta
+    name="description"
+    content="Create client intake questionnaires, discovery questions, and onboarding forms for freelance and small business projects."
+  />
+  <link rel="canonical" href="https://jschuerch.com/apps/client-questionnaire-generator/" />
 
+  <meta property="og:title" content="Client Questionnaire Generator" />
+  <meta
+    property="og:description"
+    content="Create client intake questionnaires, discovery questions, and onboarding forms for freelance and small business projects."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://jschuerch.com/apps/client-questionnaire-generator/" />
+
+  <style>
+    :root {
+      --bg: #0b1220;
+      --card: #121b2e;
+      --text: #f3f4f6;
+      --muted: #b8c0cc;
+      --line: rgba(255,255,255,0.1);
+      --link: #7cc2ff;
+      --max: 860px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 48px 20px 80px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 32px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    h1, h2, h3 {
+      line-height: 1.2;
+      margin-top: 0;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      margin-top: 34px;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    p, li {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-top: 0;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .top-link {
+      display: inline-block;
+      margin-bottom: 18px;
+      font-size: 0.95rem;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-bottom: 18px;
+    }
+
+    .intro {
+      margin-bottom: 20px;
+    }
+
+    .example-box,
+    .faq-item {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      margin-top: 14px;
+      background: rgba(255,255,255,0.02);
+    }
+
+    .faq-item p:last-child,
+    .example-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .actions-top {
+      margin-top: 18px;
+      margin-bottom: 8px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 11px 16px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: 0.18s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: #ffffff;
+      color: #0b1220;
+      min-width: 180px;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      opacity: 0.96;
+      text-decoration: none;
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      border-color: var(--line);
+      min-width: 120px;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.08);
+      text-decoration: none;
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 22px;
+      }
+
+      .actions {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn,
+      .btn-primary,
+      .btn-secondary {
+        width: 170px;
+        min-width: 170px;
+        height: 48px;
+        min-height: 48px;
+        padding: 11px 16px;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Client Questionnaire Generator",
+    "url": "https://jschuerch.com/apps/client-questionnaire-generator/",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "description": "Create client intake questionnaires, discovery questions, and onboarding forms for freelance and small business projects.",
+    "publisher": {
+      "@type": "Person",
+      "name": "Justin Schuerch"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Who is this tool for?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It is built for freelancers, consultants, agencies, and small business owners who want a faster way to create client intake questionnaires and discovery questions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does the tool generate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It generates an intro message, project goals questions, business questions, content and assets questions, optional design questions, optional technical questions, and a closing message."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use the generated questionnaire as-is?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can use it as a starting point, but it is best to review and adjust the questions so they match your process, service type, and project requirements."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this only for web design projects?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. It can also be useful for branding, copywriting, marketing, consulting, development, and other client-based service work."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <a class="top-link" href="/">← Back to jschuerch.com</a>
+
+    <div class="card">
+      <h1>Client Questionnaire Generator</h1>
+      <div class="meta">
+        Create client intake questionnaires, discovery questions, and onboarding forms for freelance and small business projects.
+      </div>
+
+      <div class="intro">
+        <p>
+          Client Questionnaire Generator is a practical tool for freelancers, consultants, and agencies
+          who want a faster way to create structured client intake forms without rewriting the same questions each time.
+        </p>
+
+        <p>
+          It helps you build cleaner discovery questionnaires covering project goals, business context,
+          content needs, style preferences, and technical details so you can start projects with better clarity.
+        </p>
+      </div>
+
+      <div class="actions actions-top">
+        <a class="btn btn-primary" href="https://client-questionnaire-generator.streamlit.app/" target="_blank" rel="noopener noreferrer">
+          Open App
+        </a>
+      </div>
+
+      <h2>What this tool helps with</h2>
+      <ul>
+        <li>Create client intake questionnaires faster</li>
+        <li>Generate discovery questions for new projects</li>
+        <li>Clarify goals, expectations, and priorities earlier</li>
+        <li>Reduce back-and-forth before starting client work</li>
+        <li>Build a more consistent onboarding process</li>
+      </ul>
+
+      <h2>Best for</h2>
+      <p>This tool is mainly useful for people doing work such as:</p>
+      <ul>
+        <li>website design</li>
+        <li>web development</li>
+        <li>branding</li>
+        <li>copywriting</li>
+        <li>marketing services</li>
+        <li>consulting</li>
+        <li>other client-based freelance or agency work</li>
+      </ul>
+
+      <h2>How to use it</h2>
+      <p>
+        Enter the service type, project type, client type, tone, and whether you want design or technical questions included.
+        The tool then generates a client-ready questionnaire you can review, edit, and send as a starting point for onboarding.
+      </p>
+
+      <h2>Example output</h2>
+      <div class="example-box">
+        <p><strong>Example service:</strong> Website Design</p>
+        <p><strong>Example project:</strong> 5-page business website</p>
+        <p><strong>Example client:</strong> Local business</p>
+        <p><strong>Sample question:</strong> What is the main goal of this 5-page business website?</p>
+        <p><strong>Sample question:</strong> Who is your target audience or ideal customer?</p>
+        <p><strong>Sample question:</strong> Do you already have the main content, copy, or materials prepared?</p>
+      </div>
+
+      <div class="example-box">
+        <p><strong>Example service:</strong> Branding</p>
+        <p><strong>Example project:</strong> visual identity refresh</p>
+        <p><strong>Example client:</strong> e-commerce brand</p>
+        <p><strong>Sample question:</strong> Are there any colors, fonts, or design elements you want included or avoided?</p>
+        <p><strong>Sample question:</strong> What would a successful outcome look like for you?</p>
+        <p><strong>Sample question:</strong> Are there any examples of projects, competitors, or references you want us to keep in mind?</p>
+      </div>
+
+      <h2>Why people use a client questionnaire generator</h2>
+      <p>
+        Client questionnaires are useful, but building them from scratch over and over can be repetitive.
+        A client questionnaire generator helps you move faster, stay more consistent, and ask better questions before the project starts.
+      </p>
+
+      <h2>FAQ</h2>
+
+      <div class="faq-item">
+        <p><strong>Who is this tool for?</strong></p>
+        <p>
+          It is built for freelancers, consultants, agencies, and small business owners who want a faster way
+          to create client intake questionnaires and discovery questions.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <p><strong>What does the tool generate?</strong></p>
+        <p>
+          It generates an intro message, project goals questions, business questions, content and assets questions,
+          optional design questions, optional technical questions, and a closing message.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <p><strong>Can I use the generated questionnaire as-is?</strong></p>
+        <p>
+          You can use it as a starting point, but it is best to review and adjust the questions so they match your process,
+          service type, and project requirements.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <p><strong>Is this only for web design projects?</strong></p>
+        <p>
+          No. It can also be useful for branding, copywriting, marketing, consulting, development,
+          and other client-based service work.
+        </p>
+      </div>
+
+      <h2>Important note</h2>
+      <p>
+        The tool provides questionnaire drafts and suggested wording only. Always review and adjust the generated questions
+        before sending them to a client.
+      </p>
+
+      <div class="actions">
+        <a class="btn btn-primary" href="https://client-questionnaire-generator.streamlit.app/" target="_blank" rel="noopener noreferrer">
+          Open App
+        </a>
+        <a class="btn btn-secondary" href="/apps/client-questionnaire-generator/privacy/">
+          Privacy
+        </a>
+        <a class="btn btn-secondary" href="/apps/client-questionnaire-generator/terms/">
+          Terms
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

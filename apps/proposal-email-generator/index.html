@@ -1,1 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proposal Email Generator | Create Proposal Emails and Client Follow-Up Emails</title>
+  <meta
+    name="description"
+    content="Create proposal emails, client pitch emails, follow-up emails, and final follow-up drafts for freelance and small business work."
+  />
+  <link rel="canonical" href="https://jschuerch.com/apps/proposal-email-generator/" />
 
+  <meta property="og:title" content="Proposal Email Generator" />
+  <meta
+    property="og:description"
+    content="Create proposal emails, client pitch emails, follow-up emails, and final follow-up drafts for freelance and small business work."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://jschuerch.com/apps/proposal-email-generator/" />
+
+  <style>
+    :root {
+      --bg: #0b1220;
+      --card: #121b2e;
+      --text: #f3f4f6;
+      --muted: #b8c0cc;
+      --line: rgba(255,255,255,0.1);
+      --link: #7cc2ff;
+      --max: 860px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 48px 20px 80px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 32px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    h1, h2, h3 {
+      line-height: 1.2;
+      margin-top: 0;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      margin-top: 34px;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    p, li {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-top: 0;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .top-link {
+      display: inline-block;
+      margin-bottom: 18px;
+      font-size: 0.95rem;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-bottom: 18px;
+    }
+
+    .intro {
+      margin-bottom: 20px;
+    }
+
+    .example-box,
+    .faq-item {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      margin-top: 14px;
+      background: rgba(255,255,255,0.02);
+    }
+
+    .faq-item p:last-child,
+    .example-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .actions-top {
+      margin-top: 18px;
+      margin-bottom: 8px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 11px 16px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: 0.18s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: #ffffff;
+      color: #0b1220;
+      min-width: 180px;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      opacity: 0.96;
+      text-decoration: none;
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      border-color: var(--line);
+      min-width: 120px;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.08);
+      text-decoration: none;
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 22px;
+      }
+
+      .actions {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn,
+      .btn-primary,
+      .btn-secondary {
+        width: 170px;
+        min-width: 170px;
+        height: 48px;
+        min-height: 48px;
+        padding: 11px 16px;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Proposal Email Generator",
+    "url": "https://jschuerch.com/apps/proposal-email-generator/",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "description": "Create proposal emails, client pitch emails, follow-up emails, and final follow-up drafts for freelance and small business work.",
+    "publisher": {
+      "@type": "Person",
+      "name": "Justin Schuerch"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Who is this tool for?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It is built for freelancers, consultants, and small business owners who want a faster way to draft proposal emails, pitch emails, and client follow-ups."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does the tool generate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It generates proposal email drafts, subject lines, short follow-up emails, warmer follow-up drafts, and final follow-up emails."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use the generated email as-is?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can use it as a starting point, but it is best to review and adjust the wording so it matches your offer, pricing, tone, and client relationship."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this only for freelancers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. It can also be useful for agencies, consultants, solo business owners, and other service providers who need cleaner proposal and follow-up emails."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <a class="top-link" href="/">← Back to jschuerch.com</a>
+
+    <div class="card">
+      <h1>Proposal Email Generator</h1>
+      <div class="meta">
+        Create proposal emails, client pitch emails, follow-up emails, and final follow-up drafts for freelance and small business work.
+      </div>
+
+      <div class="intro">
+        <p>
+          Proposal Email Generator is a practical tool for freelancers, consultants, and small business owners
+          who want a faster way to draft proposal emails and client follow-ups without rewriting the same messages each time.
+        </p>
+
+        <p>
+          It helps you create cleaner first-contact proposal emails, short follow-ups, warmer check-ins, and final follow-up messages
+          so you can save time, stay professional, and communicate with more consistency.
+        </p>
+      </div>
+
+      <div class="actions actions-top">
+        <a class="btn btn-primary" href="https://proposal-email-generator.streamlit.app/" target="_blank" rel="noopener noreferrer">
+          Open App
+        </a>
+      </div>
+
+      <h2>What this tool helps with</h2>
+      <ul>
+        <li>Create proposal email drafts faster</li>
+        <li>Generate client pitch emails with clearer wording</li>
+        <li>Write short follow-up emails without starting from scratch</li>
+        <li>Draft warmer check-in messages when a client has not replied</li>
+        <li>Create final follow-up emails that still sound professional</li>
+      </ul>
+
+      <h2>Best for</h2>
+      <p>This tool is mainly useful for people doing work such as:</p>
+      <ul>
+        <li>freelance design</li>
+        <li>web development</li>
+        <li>copywriting</li>
+        <li>marketing services</li>
+        <li>consulting</li>
+        <li>branding projects</li>
+        <li>other client-based service work</li>
+      </ul>
+
+      <h2>How to use it</h2>
+      <p>
+        Enter the client name, service type, project type, budget or price, preferred tone, and any optional note.
+        The tool then generates proposal and follow-up email drafts you can review, edit, and use as a starting point
+        for your own client outreach and project conversations.
+      </p>
+
+      <h2>Example output</h2>
+      <div class="example-box">
+        <p><strong>Example client:</strong> Bright Studio</p>
+        <p><strong>Example service:</strong> Website Design</p>
+        <p><strong>Example project:</strong> 5-page business website</p>
+        <p><strong>Example price:</strong> $1,500</p>
+        <p><strong>Sample proposal subject:</strong> Proposal for 5-page business website</p>
+        <p><strong>Sample email line:</strong> I’d be glad to support you with website design for this 5-page business website. The proposed project budget is $1,500.</p>
+      </div>
+
+      <div class="example-box">
+        <p><strong>Example client:</strong> North Peak Media</p>
+        <p><strong>Example service:</strong> SEO Consulting</p>
+        <p><strong>Example project:</strong> monthly SEO support</p>
+        <p><strong>Sample follow-up subject:</strong> Following Up on monthly SEO support</p>
+        <p><strong>Sample final follow-up subject:</strong> Final Follow-Up: monthly SEO support</p>
+        <p><strong>Sample email line:</strong> This is a final follow-up regarding my proposal for monthly SEO support. If the project is no longer moving forward, no problem at all—I just wanted to check in one last time before closing the loop.</p>
+      </div>
+
+      <h2>Why people use a proposal email generator</h2>
+      <p>
+        Proposal emails and follow-up emails can be repetitive, awkward, and easy to overthink. A proposal email generator
+        helps you move faster, keep your writing professional, and reduce the friction of drafting the same kinds of messages
+        again and again when pitching work or following up with potential clients.
+      </p>
+
+      <h2>FAQ</h2>
+
+      <div class="faq-item">
+        <p><strong>Who is this tool for?</strong></p>
+        <p>
+          It is built for freelancers, consultants, and small business owners who want a faster way to draft proposal emails,
+          pitch emails, and client follow-ups.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <p><strong>What does the tool generate?</strong></p>
+        <p>
+          It generates proposal email drafts, subject lines, short follow-up emails, warmer follow-up drafts,
+          and final follow-up emails.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <p><strong>Can I use the generated email as-is?</strong></p>
+        <p>
+          You can use it as a starting point, but it is best to review and adjust the wording so it matches your offer,
+          pricing, tone, and client relationship.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <p><strong>Is this only for freelancers?</strong></p>
+        <p>
+          No. It can also be useful for agencies, consultants, solo business owners, and other service providers
+          who need cleaner proposal and follow-up emails.
+        </p>
+      </div>
+
+      <h2>Important note</h2>
+      <p>
+        The tool provides draft email text and subject line suggestions only. Always review and adjust generated proposal
+        and follow-up emails before sending them to a client.
+      </p>
+
+      <div class="actions">
+        <a class="btn btn-primary" href="https://proposal-email-generator.streamlit.app/" target="_blank" rel="noopener noreferrer">
+          Open App
+        </a>
+        <a class="btn btn-secondary" href="/apps/proposal-email-generator/privacy/">
+          Privacy
+        </a>
+        <a class="btn btn-secondary" href="/apps/proposal-email-generator/terms/">
+          Terms
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

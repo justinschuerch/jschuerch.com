@@ -3,11 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Etsy Title + Tags Generator for Digital Products | JSchuerch Apps</title>
+  <title>Etsy Title + Tags Generator | Listing Ideas for Digital Products</title>
   <meta
     name="description"
-    content="Generate Etsy title ideas, tags, and listing description drafts for printables and digital products. Built for Etsy sellers who want faster listing creation and better SEO support."
+    content="Generate Etsy title ideas, tags, and listing description drafts for printables and digital products. A practical tool for Etsy sellers who want faster listing creation and better SEO support."
   />
+  <link rel="canonical" href="https://jschuerch.com/apps/etsy-title-tags-generator/about/" />
+
+  <meta property="og:title" content="Etsy Title + Tags Generator" />
+  <meta
+    property="og:description"
+    content="Generate Etsy title ideas, tags, and listing description drafts for printables and digital products."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://jschuerch.com/apps/etsy-title-tags-generator/about/" />
+
   <style>
     :root {
       --bg: #0b1220;
@@ -88,10 +98,15 @@
     .meta {
       color: var(--muted);
       font-size: 1rem;
-      margin-bottom: 24px;
+      margin-bottom: 18px;
     }
 
-    .example-box {
+    .intro {
+      margin-bottom: 20px;
+    }
+
+    .example-box,
+    .faq-item {
       border: 1px solid var(--line);
       border-radius: 14px;
       padding: 18px;
@@ -99,11 +114,21 @@
       background: rgba(255,255,255,0.02);
     }
 
+    .faq-item p:last-child,
+    .example-box p:last-child {
+      margin-bottom: 0;
+    }
+
     .actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
       margin-top: 26px;
+    }
+
+    .actions-top {
+      margin-top: 18px;
+      margin-bottom: 8px;
     }
 
     .btn {
@@ -156,14 +181,71 @@
       .btn,
       .btn-primary,
       .btn-secondary {
-        width: 160px;
-        min-width: 160px;
+        width: 170px;
+        min-width: 170px;
         height: 48px;
         min-height: 48px;
         padding: 11px 16px;
       }
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Etsy Title + Tags Generator",
+    "url": "https://jschuerch.com/apps/etsy-title-tags-generator/about/",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "description": "Generate Etsy title ideas, tags, and listing description drafts for printables and digital products.",
+    "publisher": {
+      "@type": "Person",
+      "name": "Justin Schuerch"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does this tool help with Etsy SEO?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It helps brainstorm titles, tags, and descriptions that are better aligned with your product type and audience. You should still review and refine the final wording before publishing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it only for printables?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. It is especially useful for printables and digital downloads, but it can also help with other Etsy listing ideas where you need better titles and tags."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use the generated text directly?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can use it as a starting point, but it is best to edit the output so it fits your exact product, style, and shop voice."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it create Etsy descriptions too?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The tool can generate simple description drafts in addition to title and tag ideas."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <div class="wrap">
@@ -175,18 +257,27 @@
         Generate Etsy title ideas, tags, and listing description drafts for printables and digital products.
       </div>
 
-      <p>
-        Etsy Title + Tags Generator is a simple tool for Etsy sellers who want faster listing creation.
-        It helps you brainstorm title ideas, relevant tags, and basic description drafts for printable
-        and digital products without starting from scratch every time.
-      </p>
+      <div class="intro">
+        <p>
+          Etsy Title + Tags Generator is a practical tool for Etsy sellers who want faster listing creation.
+          It helps you brainstorm title ideas, relevant tags, and simple description drafts for printable
+          and digital products without starting from scratch every time.
+        </p>
 
-      <p>
-        This tool is especially useful for sellers working on Etsy SEO for digital downloads, printable
-        planners, trackers, checklists, and other listing-based products where wording and keywords matter.
-      </p>
+        <p>
+          It is especially useful for sellers working on Etsy listings for digital downloads, printable
+          planners, trackers, checklists, and similar products where wording, search intent, and keyword
+          ideas matter.
+        </p>
+      </div>
 
-      <h2>What this Etsy tool helps with</h2>
+      <div class="actions actions-top">
+        <a class="btn btn-primary" href="https://etsy-title-tags-generator.streamlit.app/" target="_blank" rel="noopener noreferrer">
+          Open App
+        </a>
+      </div>
+
+      <h2>What this tool helps with</h2>
       <ul>
         <li>Generate Etsy title ideas for new listings</li>
         <li>Suggest relevant Etsy tags for printable and digital products</li>
@@ -196,7 +287,7 @@
       </ul>
 
       <h2>Best for</h2>
-      <p>This tool is mainly built for Etsy sellers creating products such as:</p>
+      <p>This tool is mainly useful for Etsy sellers creating products such as:</p>
       <ul>
         <li>meal planners</li>
         <li>cleaning checklists</li>
@@ -222,7 +313,14 @@
         <p><strong>Sample description start:</strong> Stay organized with a printable budget planner designed to help busy moms track spending, savings, and monthly goals.</p>
       </div>
 
-      <h2>Why Etsy sellers use a title and tags generator</h2>
+      <div class="example-box">
+        <p><strong>Example product idea:</strong> Cleaning checklist</p>
+        <p><strong>Sample Etsy title idea:</strong> Printable Cleaning Checklist | Home Cleaning Planner | Editable Household Checklist PDF</p>
+        <p><strong>Sample Etsy tags:</strong> cleaning checklist, cleaning planner, home printable, household organizer, editable pdf, cleaning schedule</p>
+        <p><strong>Sample description start:</strong> Organize your routine with a printable cleaning checklist designed to simplify weekly and monthly household tasks.</p>
+      </div>
+
+      <h2>Why sellers use an Etsy title and tags generator</h2>
       <p>
         Writing Etsy listings can be repetitive, especially when you are creating multiple products in the same niche.
         A title and tags generator can help you brainstorm faster, test different wording, and build stronger drafts
@@ -231,22 +329,42 @@
       </p>
 
       <h2>FAQ</h2>
-      <p><strong>Does this tool help with Etsy SEO?</strong><br />
-      It can help with brainstorming titles, tags, and descriptions that are more aligned with your product type and audience. You should still review and refine the final wording before publishing.</p>
 
-      <p><strong>Is it only for printables?</strong><br />
-      No. It is especially useful for printables and digital downloads, but it can also help with other Etsy listing ideas where you need better titles and tags.</p>
+      <div class="faq-item">
+        <p><strong>Does this tool help with Etsy SEO?</strong></p>
+        <p>
+          It can help with brainstorming titles, tags, and descriptions that are more aligned with your product
+          type and audience. You should still review and refine the final wording before publishing.
+        </p>
+      </div>
 
-      <p><strong>Can I use the generated text directly?</strong><br />
-      You can use it as a starting point, but it is best to edit the output so it fits your exact product, style, and shop voice.</p>
+      <div class="faq-item">
+        <p><strong>Is it only for printables?</strong></p>
+        <p>
+          No. It is especially useful for printables and digital downloads, but it can also help with other Etsy
+          listing ideas where you need better titles and tags.
+        </p>
+      </div>
 
-      <p><strong>Does it create Etsy descriptions too?</strong><br />
-      Yes. The tool can generate simple description drafts in addition to title and tag ideas.</p>
+      <div class="faq-item">
+        <p><strong>Can I use the generated text directly?</strong></p>
+        <p>
+          You can use it as a starting point, but it is best to edit the output so it fits your exact product,
+          style, and shop voice.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <p><strong>Does it create Etsy descriptions too?</strong></p>
+        <p>
+          Yes. The tool can generate simple description drafts in addition to title and tag ideas.
+        </p>
+      </div>
 
       <h2>Important note</h2>
       <p>
-        The tool provides suggestions only. Always review and adjust generated titles, tags, and descriptions before
-        using them in a live Etsy listing.
+        The tool provides suggestions only. Always review and adjust generated titles, tags, and descriptions
+        before using them in a live Etsy listing.
       </p>
 
       <div class="actions">

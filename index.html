@@ -3,88 +3,354 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HourLog</title>
-  <meta name="description" content="Official website for the HourLog app." />
+
+  <title>HourLog – Work Hours & Pay Tracker</title>
+  <meta
+    name="description"
+    content="HourLog is a simple app for tracking work hours, shifts, earnings, and pay. Keep your work time organized and calculate income easily."
+  />
+  <meta
+    name="keywords"
+    content="HourLog, work hours tracker, pay tracker, shift tracker, salary calculator, hours and pay app, timesheet app"
+  />
+  <meta name="author" content="HourLog" />
+
+  <meta property="og:title" content="HourLog – Work Hours & Pay Tracker" />
+  <meta
+    property="og:description"
+    content="Track work hours, shifts, and earnings with HourLog. A simple app for managing your time and pay."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://jschuerch.com/" />
+
   <style>
     * {
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      min-height: 100vh;
       font-family: Arial, sans-serif;
       color: #f5f7ff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
       background:
         radial-gradient(circle at top left, rgba(20, 90, 255, 0.22), transparent 35%),
         radial-gradient(circle at center, rgba(0, 102, 255, 0.10), transparent 40%),
         linear-gradient(135deg, #020814 0%, #031225 45%, #041a33 100%);
-    }
-
-    .container {
-      width: min(720px, 90%);
-      padding: 48px 28px;
-      background: rgba(9, 18, 38, 0.78);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 22px;
-      box-shadow:
-        0 10px 40px rgba(0, 0, 0, 0.35),
-        inset 0 1px 0 rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(6px);
-    }
-
-    h1 {
-      margin: 0 0 14px;
-      font-size: clamp(2.4rem, 6vw, 4.2rem);
-      line-height: 1.05;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-    }
-
-    p {
-      margin: 0;
-      font-size: 1.1rem;
-      line-height: 1.7;
-      color: rgba(235, 240, 255, 0.88);
-    }
-
-    .small {
-      margin-top: 18px;
-      font-size: 0.98rem;
-      color: rgba(210, 220, 255, 0.72);
+      min-height: 100vh;
     }
 
     a {
-      color: #9fc3ff;
+      color: inherit;
       text-decoration: none;
     }
 
-    a:hover {
-      text-decoration: underline;
+    .page {
+      width: min(1150px, calc(100% - 32px));
+      margin: 0 auto;
     }
 
-    .badge {
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 0;
+    }
+
+    .brand {
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: rgba(235, 240, 255, 0.82);
+      font-size: 0.96rem;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    .hero {
+      min-height: calc(100vh - 90px);
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 42px;
+      align-items: center;
+      padding: 30px 0 60px;
+    }
+
+    .pill {
       display: inline-block;
-      margin-bottom: 22px;
-      padding: 10px 18px;
+      margin-bottom: 20px;
+      padding: 10px 16px;
       border-radius: 999px;
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.08);
       color: rgba(230, 238, 255, 0.9);
       font-size: 0.95rem;
     }
+
+    h1 {
+      margin: 0 0 18px;
+      font-size: clamp(3rem, 7vw, 5.4rem);
+      line-height: 0.96;
+      letter-spacing: -0.05em;
+      font-weight: 800;
+      max-width: 700px;
+    }
+
+    .lead {
+      margin: 0;
+      max-width: 670px;
+      font-size: 1.14rem;
+      line-height: 1.8;
+      color: rgba(235, 240, 255, 0.86);
+    }
+
+    .buttons {
+      display: flex;
+      gap: 16px;
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 0 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: transform 0.15s ease, opacity 0.15s ease, border-color 0.15s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      color: #061124;
+      background: linear-gradient(135deg, #c9d8ff 0%, #8fb0ff 100%);
+      box-shadow: 0 10px 30px rgba(82, 135, 255, 0.22);
+    }
+
+    .btn-secondary {
+      color: #f5f7ff;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .btn-secondary:hover {
+      border-color: rgba(255, 255, 255, 0.24);
+    }
+
+    .meta {
+      margin-top: 26px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      color: rgba(210, 220, 255, 0.72);
+      font-size: 0.97rem;
+    }
+
+    .card-wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 470px;
+      padding: 22px;
+      border-radius: 28px;
+      background: rgba(9, 18, 38, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow:
+        0 18px 50px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(8px);
+    }
+
+    .card-inner {
+      border-radius: 22px;
+      padding: 28px;
+      min-height: 430px;
+      background:
+        radial-gradient(circle at top right, rgba(77, 122, 255, 0.16), transparent 30%),
+        radial-gradient(circle at bottom left, rgba(31, 210, 170, 0.12), transparent 25%),
+        linear-gradient(180deg, rgba(7, 21, 46, 0.98), rgba(6, 18, 39, 0.96));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card-tag {
+      display: inline-block;
+      align-self: flex-start;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: rgba(235, 240, 255, 0.88);
+      font-size: 0.88rem;
+      margin-bottom: 18px;
+    }
+
+    .card h2 {
+      margin: 0 0 12px;
+      font-size: 2rem;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+    }
+
+    .card p {
+      margin: 0;
+      color: rgba(235, 240, 255, 0.82);
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+
+    .feature-list {
+      margin-top: 26px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .feature {
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      color: rgba(240, 244, 255, 0.92);
+      font-size: 0.98rem;
+    }
+
+    .footer {
+      padding: 20px 0 40px;
+      color: rgba(210, 220, 255, 0.68);
+      font-size: 0.95rem;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 20px;
+      }
+
+      .card-wrap {
+        justify-content: flex-start;
+      }
+
+      h1 {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav {
+        gap: 18px;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        gap: 14px;
+      }
+
+      .card-inner {
+        min-height: auto;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="badge">Official app website</div>
-    <h1>HourLog</h1>
-    <p>This website is for the HourLog app.</p>
-    <p class="small">HourLog helps you track work hours and pay.</p>
+  <div class="page">
+    <header class="nav">
+      <a href="/" class="brand">HourLog</a>
+      <nav class="nav-links">
+        <a href="https://play.google.com/store/apps/details?id=ch.justin.hourlog" target="_blank" rel="noopener noreferrer">Google Play</a>
+        <a href="https://sites.google.com/view/hourlogprivacypolicy/" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+      </nav>
+    </header>
+
+    <main class="hero">
+      <section>
+        <div class="pill">Official app website</div>
+        <h1>Track your work hours and pay with HourLog.</h1>
+        <p class="lead">
+          HourLog is a simple work hours and pay tracker for keeping shifts, earnings,
+          and work time organized. Use it to log your hours, stay on top of your schedule,
+          and get a clear overview of your income in one place.
+        </p>
+
+        <div class="buttons">
+          <a
+            class="btn btn-primary"
+            href="https://play.google.com/store/apps/details?id=ch.justin.hourlog"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Get HourLog on Google Play
+          </a>
+
+          <a
+            class="btn btn-secondary"
+            href="https://sites.google.com/view/hourlogprivacypolicy/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Privacy Policy
+          </a>
+        </div>
+
+        <div class="meta">
+          <span>Simple time tracking</span>
+          <span>Pay overview</span>
+          <span>Built for everyday work logging</span>
+        </div>
+      </section>
+
+      <section class="card-wrap">
+        <div class="card">
+          <div class="card-inner">
+            <div>
+              <div class="card-tag">Hours + Pay Tracker</div>
+              <h2>HourLog</h2>
+              <p>
+                A clean and simple app for tracking hours worked, monitoring earnings,
+                and keeping your work life organized.
+              </p>
+
+              <div class="feature-list">
+                <div class="feature">Track work hours and shifts</div>
+                <div class="feature">Keep an overview of earnings and pay</div>
+                <div class="feature">Simple app for everyday use</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      © 2026 HourLog
+    </footer>
   </div>
 </body>
 </html>

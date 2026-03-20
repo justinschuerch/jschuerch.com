@@ -4,21 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>HourLog – Work Hours & Pay Tracker</title>
+  <title>Justin Schuerch Apps</title>
   <meta
     name="description"
-    content="HourLog is a simple app for tracking work hours, shifts, earnings, and pay. Keep your work time organized and calculate income easily."
+    content="Official website for apps by Justin Schuerch. Discover simple and useful mobile apps, including HourLog."
   />
   <meta
     name="keywords"
-    content="HourLog, work hours tracker, pay tracker, shift tracker, salary calculator, hours and pay app, timesheet app"
+    content="Justin Schuerch, mobile apps, Android apps, HourLog, work hours tracker, pay tracker"
   />
-  <meta name="author" content="HourLog" />
+  <meta name="author" content="Justin Schuerch" />
 
-  <meta property="og:title" content="HourLog – Work Hours & Pay Tracker" />
+  <meta property="og:title" content="Justin Schuerch Apps" />
   <meta
     property="og:description"
-    content="Track work hours, shifts, and earnings with HourLog. A simple app for managing your time and pay."
+    content="Official website for apps by Justin Schuerch, including HourLog."
   />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://jschuerch.com/" />
@@ -58,6 +58,8 @@
       align-items: center;
       justify-content: space-between;
       padding: 22px 0;
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
     .brand {
@@ -68,8 +70,7 @@
 
     .nav-links {
       display: flex;
-      gap: 22px;
-      align-items: center;
+      gap: 18px;
       flex-wrap: wrap;
     }
 
@@ -83,17 +84,13 @@
     }
 
     .hero {
-      min-height: calc(100vh - 90px);
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 42px;
-      align-items: center;
-      padding: 30px 0 60px;
+      padding: 52px 0 34px;
+      max-width: 760px;
     }
 
     .pill {
       display: inline-block;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       padding: 10px 16px;
       border-radius: 999px;
       background: rgba(255, 255, 255, 0.05);
@@ -104,25 +101,73 @@
 
     h1 {
       margin: 0 0 18px;
-      font-size: clamp(3rem, 7vw, 5.4rem);
-      line-height: 0.96;
+      font-size: clamp(3rem, 7vw, 5rem);
+      line-height: 0.98;
       letter-spacing: -0.05em;
       font-weight: 800;
-      max-width: 700px;
     }
 
     .lead {
       margin: 0;
-      max-width: 670px;
-      font-size: 1.14rem;
+      font-size: 1.12rem;
       line-height: 1.8;
       color: rgba(235, 240, 255, 0.86);
+      max-width: 700px;
+    }
+
+    .section {
+      padding: 18px 0 56px;
+    }
+
+    .section h2 {
+      margin: 0 0 18px;
+      font-size: 1.8rem;
+      letter-spacing: -0.03em;
+    }
+
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      padding: 24px;
+      border-radius: 24px;
+      background: rgba(9, 18, 38, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow:
+        0 18px 50px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(8px);
+    }
+
+    .card-tag {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: rgba(230, 238, 255, 0.88);
+      font-size: 0.85rem;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.6rem;
+      letter-spacing: -0.03em;
+    }
+
+    .card p {
+      margin: 0 0 20px;
+      line-height: 1.7;
+      color: rgba(235, 240, 255, 0.82);
     }
 
     .buttons {
       display: flex;
-      gap: 16px;
-      margin-top: 32px;
+      gap: 12px;
       flex-wrap: wrap;
     }
 
@@ -130,12 +175,12 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 54px;
-      padding: 0 22px;
+      min-height: 46px;
+      padding: 0 18px;
       border-radius: 999px;
       font-weight: 700;
-      font-size: 1rem;
-      transition: transform 0.15s ease, opacity 0.15s ease, border-color 0.15s ease;
+      font-size: 0.96rem;
+      transition: transform 0.15s ease, border-color 0.15s ease;
     }
 
     .btn:hover {
@@ -158,86 +203,13 @@
       border-color: rgba(255, 255, 255, 0.24);
     }
 
-    .meta {
-      margin-top: 26px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      color: rgba(210, 220, 255, 0.72);
-      font-size: 0.97rem;
-    }
-
-    .card-wrap {
-      display: flex;
-      justify-content: center;
-    }
-
-    .card {
-      width: 100%;
-      max-width: 470px;
-      padding: 22px;
-      border-radius: 28px;
-      background: rgba(9, 18, 38, 0.72);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow:
-        0 18px 50px rgba(0, 0, 0, 0.35),
-        inset 0 1px 0 rgba(255, 255, 255, 0.04);
-      backdrop-filter: blur(8px);
-    }
-
-    .card-inner {
-      border-radius: 22px;
-      padding: 28px;
-      min-height: 430px;
-      background:
-        radial-gradient(circle at top right, rgba(77, 122, 255, 0.16), transparent 30%),
-        radial-gradient(circle at bottom left, rgba(31, 210, 170, 0.12), transparent 25%),
-        linear-gradient(180deg, rgba(7, 21, 46, 0.98), rgba(6, 18, 39, 0.96));
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .card-tag {
-      display: inline-block;
-      align-self: flex-start;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      color: rgba(235, 240, 255, 0.88);
-      font-size: 0.88rem;
-      margin-bottom: 18px;
-    }
-
-    .card h2 {
-      margin: 0 0 12px;
-      font-size: 2rem;
-      line-height: 1.1;
-      letter-spacing: -0.03em;
-    }
-
-    .card p {
-      margin: 0;
-      color: rgba(235, 240, 255, 0.82);
-      line-height: 1.7;
-      font-size: 1rem;
-    }
-
-    .feature-list {
-      margin-top: 26px;
-      display: grid;
-      gap: 12px;
-    }
-
-    .feature {
-      padding: 14px 16px;
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      color: rgba(240, 244, 255, 0.92);
-      font-size: 0.98rem;
+    .coming-soon {
+      color: rgba(210, 220, 255, 0.68);
+      text-align: center;
+      padding: 26px;
+      border-radius: 24px;
+      border: 1px dashed rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.02);
     }
 
     .footer {
@@ -246,110 +218,72 @@
       font-size: 0.95rem;
       text-align: center;
     }
-
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: 1fr;
-        padding-top: 20px;
-      }
-
-      .card-wrap {
-        justify-content: flex-start;
-      }
-
-      h1 {
-        max-width: 100%;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .nav {
-        gap: 18px;
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .nav-links {
-        gap: 14px;
-      }
-
-      .card-inner {
-        min-height: auto;
-      }
-    }
   </style>
 </head>
 <body>
   <div class="page">
     <header class="nav">
-      <a href="/" class="brand">HourLog</a>
+      <a href="/" class="brand">Justin Schuerch Apps</a>
       <nav class="nav-links">
-        <a href="https://play.google.com/store/apps/details?id=ch.justin.hourlog" target="_blank" rel="noopener noreferrer">Google Play</a>
+        <a href="#apps">Apps</a>
         <a href="https://sites.google.com/view/hourlogprivacypolicy/" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+        <a href="https://play.google.com/store/apps/details?id=ch.justin.hourlog" target="_blank" rel="noopener noreferrer">Google Play</a>
       </nav>
     </header>
 
-    <main class="hero">
-      <section>
+    <main>
+      <section class="hero">
         <div class="pill">Official app website</div>
-        <h1>Track your work hours and pay with HourLog.</h1>
+        <h1>Simple mobile apps built for everyday use.</h1>
         <p class="lead">
-          HourLog is a simple work hours and pay tracker for keeping shifts, earnings,
-          and work time organized. Use it to log your hours, stay on top of your schedule,
-          and get a clear overview of your income in one place.
+          Welcome to the official website for apps by Justin Schuerch.
+          Here you can find current Android apps, app links, and privacy information.
+          More apps will be added here over time.
         </p>
-
-        <div class="buttons">
-          <a
-            class="btn btn-primary"
-            href="https://play.google.com/store/apps/details?id=ch.justin.hourlog"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Get HourLog on Google Play
-          </a>
-
-          <a
-            class="btn btn-secondary"
-            href="https://sites.google.com/view/hourlogprivacypolicy/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View Privacy Policy
-          </a>
-        </div>
-
-        <div class="meta">
-          <span>Simple time tracking</span>
-          <span>Pay overview</span>
-          <span>Built for everyday work logging</span>
-        </div>
       </section>
 
-      <section class="card-wrap">
-        <div class="card">
-          <div class="card-inner">
-            <div>
-              <div class="card-tag">Hours + Pay Tracker</div>
-              <h2>HourLog</h2>
-              <p>
-                A clean and simple app for tracking hours worked, monitoring earnings,
-                and keeping your work life organized.
-              </p>
+      <section class="section" id="apps">
+        <h2>Apps</h2>
 
-              <div class="feature-list">
-                <div class="feature">Track work hours and shifts</div>
-                <div class="feature">Keep an overview of earnings and pay</div>
-                <div class="feature">Simple app for everyday use</div>
-              </div>
+        <div class="apps-grid">
+          <article class="card">
+            <div class="card-tag">Android App</div>
+            <h3>HourLog</h3>
+            <p>
+              HourLog is a simple work hours and pay tracker for logging shifts,
+              tracking time worked, and keeping an overview of earnings.
+            </p>
+
+            <div class="buttons">
+              <a
+                class="btn btn-primary"
+                href="https://play.google.com/store/apps/details?id=ch.justin.hourlog"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View on Google Play
+              </a>
+
+              <a
+                class="btn btn-secondary"
+                href="https://sites.google.com/view/hourlogprivacypolicy/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Privacy Policy
+              </a>
             </div>
+          </article>
+
+          <div class="coming-soon">
+            More apps coming soon.
           </div>
         </div>
       </section>
     </main>
 
     <footer class="footer">
-      © 2026 HourLog
+      © 2025 Justin Schuerch
     </footer>
   </div>
 </body>

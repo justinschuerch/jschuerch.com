@@ -148,11 +148,12 @@
 
     .app-top {
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 20px;
+      gap: 16px;
       margin-bottom: 18px;
-      flex-wrap: wrap;
+      text-align: center;
     }
 
     .icon-wrap {
@@ -164,6 +165,7 @@
       box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
       border: 1px solid rgba(255,255,255,0.08);
       background: rgba(255,255,255,0.04);
+      margin: 0 auto;
     }
 
     .icon-wrap img {
@@ -173,8 +175,9 @@
     }
 
     .app-head {
-      text-align: left;
-      max-width: 440px;
+      text-align: center;
+      max-width: 520px;
+      margin: 0 auto;
     }
 
     .card-tag {
@@ -207,6 +210,7 @@
       color: rgba(235, 240, 255, 0.82);
       line-height: 1.85;
       font-size: 1.02rem;
+      text-align: center;
     }
 
     .buttons {
@@ -288,14 +292,6 @@
     @media (max-width: 860px) {
       .card {
         padding: 24px;
-      }
-
-      .app-top {
-        flex-direction: column;
-      }
-
-      .app-head {
-        text-align: center;
       }
 
       .buttons {

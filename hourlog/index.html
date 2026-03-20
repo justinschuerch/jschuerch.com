@@ -4,21 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>HourLog - Work Hours & Pay Tracker</title>
+  <title>HourLog - Work Hours & Pay Tracker for Android</title>
   <meta
     name="description"
-    content="HourLog is a simple work hours and pay tracker for Android. Track your work time, hourly wage, daily totals, monthly totals, and recent sessions in one clean app."
+    content="HourLog is a simple Android work hours and pay tracker. Track work time, set your hourly wage, monitor live earnings, review recent work sessions, and see daily or monthly totals in one clean app."
   />
   <meta
     name="keywords"
-    content="HourLog, work hours tracker, pay tracker, time tracker, shift tracker, hourly wage app, work timer, earnings tracker, Android app"
+    content="HourLog, work hours tracker, pay tracker, earnings tracker, time tracker app, shift tracker, hourly wage calculator, Android work app, session tracker, monthly earnings tracker"
   />
-  <meta name="author" content="jschuerch apps" />
+  <meta name="author" content="J. Schuerch Apps" />
 
-  <meta property="og:title" content="HourLog - Work Hours & Pay Tracker" />
+  <meta property="og:title" content="HourLog - Work Hours & Pay Tracker for Android" />
   <meta
     property="og:description"
-    content="Track your work time, earnings, and sessions with HourLog."
+    content="Track your work hours, live earnings, and recent sessions with HourLog."
   />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://jschuerch.com/hourlog" />
@@ -28,20 +28,6 @@
       box-sizing: border-box;
     }
 
-    :root {
-      --bg-1: #020814;
-      --bg-2: #031225;
-      --bg-3: #041a33;
-      --panel: rgba(9, 18, 38, 0.76);
-      --panel-2: rgba(255, 255, 255, 0.04);
-      --border: rgba(255, 255, 255, 0.08);
-      --text: #f5f7ff;
-      --muted: rgba(235, 240, 255, 0.82);
-      --soft: rgba(210, 220, 255, 0.68);
-      --accent-a: #c9d8ff;
-      --accent-b: #8fb0ff;
-    }
-
     html {
       scroll-behavior: smooth;
     }
@@ -49,11 +35,11 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      color: var(--text);
+      color: #f5f7ff;
       background:
         radial-gradient(circle at top left, rgba(20, 90, 255, 0.22), transparent 35%),
         radial-gradient(circle at center, rgba(0, 102, 255, 0.10), transparent 40%),
-        linear-gradient(135deg, var(--bg-1) 0%, var(--bg-2) 45%, var(--bg-3) 100%);
+        linear-gradient(135deg, #020814 0%, #031225 45%, #041a33 100%);
       min-height: 100vh;
     }
 
@@ -63,97 +49,37 @@
     }
 
     img {
-      max-width: 100%;
       display: block;
+      max-width: 100%;
+      height: auto;
     }
 
     .page {
-      width: min(1180px, calc(100% - 32px));
+      width: min(1100px, calc(100% - 28px));
       margin: 0 auto;
+      text-align: center;
     }
 
     .nav {
       display: flex;
+      justify-content: center;
       align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-      padding: 22px 0;
+      gap: 10px;
+      padding: 18px 0 8px;
     }
 
     .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 1.2rem;
+      font-size: 0.98rem;
       font-weight: 800;
       letter-spacing: -0.02em;
-    }
-
-    .brand-dot {
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent-a), var(--accent-b));
-      box-shadow: 0 0 18px rgba(143, 176, 255, 0.4);
-      flex: 0 0 auto;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .nav-link {
-      color: var(--muted);
-      font-size: 0.96rem;
-    }
-
-    .nav-link:hover {
-      color: #fff;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 50px;
-      padding: 0 20px;
-      border-radius: 999px;
-      font-weight: 700;
-      font-size: 0.98rem;
-      transition: transform 0.15s ease, border-color 0.15s ease, opacity 0.15s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-1px);
-    }
-
-    .btn-primary {
-      color: #061124;
-      background: linear-gradient(135deg, var(--accent-a) 0%, var(--accent-b) 100%);
-      box-shadow: 0 10px 30px rgba(82, 135, 255, 0.22);
-    }
-
-    .btn-secondary {
-      color: var(--text);
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-    }
-
-    .btn-secondary:hover {
-      border-color: rgba(255, 255, 255, 0.24);
+      color: #f5f7ff;
+      opacity: 0.95;
     }
 
     .hero {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 42px;
-      align-items: center;
-      padding: 36px 0 70px;
-      min-height: calc(100vh - 94px);
+      padding: 38px 0 42px;
+      max-width: 860px;
+      margin: 0 auto;
     }
 
     .pill {
@@ -162,293 +88,197 @@
       padding: 10px 16px;
       border-radius: 999px;
       background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--border);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       color: rgba(230, 238, 255, 0.9);
-      font-size: 0.95rem;
+      font-size: 0.92rem;
     }
 
     h1 {
       margin: 0 0 18px;
-      font-size: clamp(3rem, 7vw, 5.5rem);
-      line-height: 0.96;
+      font-size: clamp(2.5rem, 7vw, 4.8rem);
+      line-height: 0.98;
       letter-spacing: -0.05em;
       font-weight: 800;
-      max-width: 680px;
     }
 
     .lead {
-      margin: 0;
-      max-width: 680px;
-      font-size: 1.12rem;
-      line-height: 1.8;
-      color: var(--muted);
+      margin: 0 auto;
+      font-size: 1.08rem;
+      line-height: 1.85;
+      color: rgba(235, 240, 255, 0.86);
+      max-width: 800px;
     }
 
     .hero-actions {
       display: flex;
-      gap: 14px;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
       flex-wrap: wrap;
-      margin-top: 30px;
+      margin-top: 28px;
     }
 
-    .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      margin-top: 24px;
-      color: var(--soft);
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 999px;
+      font-weight: 700;
       font-size: 0.96rem;
+      transition: transform 0.15s ease, border-color 0.15s ease;
+      white-space: nowrap;
     }
 
-    .hero-card {
-      padding: 22px;
-      border-radius: 28px;
-      background: var(--panel);
-      border: 1px solid var(--border);
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      color: #061124;
+      background: linear-gradient(135deg, #c9d8ff 0%, #8fb0ff 100%);
+      box-shadow: 0 10px 30px rgba(82, 135, 255, 0.22);
+    }
+
+    .btn-secondary {
+      color: #f5f7ff;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .btn-secondary:hover {
+      border-color: rgba(255, 255, 255, 0.24);
+    }
+
+    .section {
+      padding: 10px 0 54px;
+    }
+
+    .section-title {
+      margin: 0 0 22px;
+      font-size: clamp(1.9rem, 5vw, 3rem);
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+    }
+
+    .section-text {
+      margin: 0 auto 28px;
+      max-width: 820px;
+      font-size: 1.04rem;
+      line-height: 1.85;
+      color: rgba(235, 240, 255, 0.84);
+    }
+
+    .feature-card {
+      width: 100%;
+      max-width: 920px;
+      margin: 0 auto 26px;
+      padding: 28px;
+      border-radius: 26px;
+      background: rgba(9, 18, 38, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       box-shadow:
         0 18px 50px rgba(0, 0, 0, 0.35),
         inset 0 1px 0 rgba(255, 255, 255, 0.04);
       backdrop-filter: blur(8px);
     }
 
-    .hero-card-inner {
-      padding: 26px;
-      border-radius: 22px;
-      min-height: 420px;
-      background:
-        radial-gradient(circle at top right, rgba(77, 122, 255, 0.16), transparent 30%),
-        radial-gradient(circle at bottom left, rgba(31, 210, 170, 0.10), transparent 25%),
-        linear-gradient(180deg, rgba(7, 21, 46, 0.98), rgba(6, 18, 39, 0.96));
-      border: 1px solid var(--border);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .hero-shot {
-      overflow: hidden;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.06);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.28);
-    }
-
-    .hero-shot img {
-      width: 100%;
-      height: auto;
-    }
-
-    .section {
-      padding: 20px 0 70px;
-    }
-
-    .section-header {
-      max-width: 760px;
-      margin-bottom: 28px;
-    }
-
-    .section-header h2 {
-      margin: 0 0 12px;
-      font-size: clamp(2rem, 5vw, 3rem);
-      line-height: 1.05;
-      letter-spacing: -0.04em;
-    }
-
-    .section-header p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.8;
-      font-size: 1.06rem;
-    }
-
-    .feature-grid {
-      display: grid;
-      gap: 24px;
-    }
-
-    .feature-card {
-      display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      gap: 28px;
-      align-items: center;
-      padding: 24px;
-      border-radius: 28px;
-      background: var(--panel);
-      border: 1px solid var(--border);
-      box-shadow:
-        0 18px 50px rgba(0, 0, 0, 0.28),
-        inset 0 1px 0 rgba(255, 255, 255, 0.04);
-    }
-
-    .feature-card.reverse {
-      grid-template-columns: 1.05fr 0.95fr;
-    }
-
-    .feature-card.reverse .feature-text {
-      order: 1;
-    }
-
-    .feature-card.reverse .feature-image {
-      order: 2;
-    }
-
     .feature-tag {
       display: inline-block;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
       padding: 8px 12px;
       border-radius: 999px;
       background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--border);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       color: rgba(230, 238, 255, 0.88);
-      font-size: 0.86rem;
+      font-size: 0.85rem;
     }
 
-    .feature-text h3 {
-      margin: 0 0 12px;
-      font-size: clamp(1.7rem, 4vw, 2.5rem);
-      line-height: 1.08;
-      letter-spacing: -0.03em;
-    }
-
-    .feature-text p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.8;
-      font-size: 1.04rem;
-    }
-
-    .feature-image {
-      display: flex;
-      justify-content: center;
-    }
-
-    .phone-frame {
-      width: min(100%, 360px);
-      padding: 14px;
-      border-radius: 30px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.07);
-      box-shadow: 0 16px 40px rgba(0,0,0,0.30);
-    }
-
-    .phone-frame img {
-      width: 100%;
-      border-radius: 20px;
-      border: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .info-strip {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin-top: 10px;
-    }
-
-    .info-box {
-      padding: 20px;
-      border-radius: 22px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.07);
-    }
-
-    .info-box h4 {
-      margin: 0 0 8px;
-      font-size: 1.08rem;
-    }
-
-    .info-box p {
-      margin: 0;
-      color: var(--soft);
-      line-height: 1.7;
-      font-size: 0.96rem;
-    }
-
-    .cta {
-      padding: 34px;
-      border-radius: 30px;
-      background: var(--panel);
-      border: 1px solid var(--border);
-      box-shadow:
-        0 18px 50px rgba(0, 0, 0, 0.28),
-        inset 0 1px 0 rgba(255, 255, 255, 0.04);
-      text-align: center;
-    }
-
-    .cta h2 {
+    .feature-card h2 {
       margin: 0 0 14px;
-      font-size: clamp(2rem, 5vw, 3.1rem);
-      line-height: 1.05;
+      font-size: clamp(1.8rem, 4.8vw, 3rem);
+      line-height: 1.08;
       letter-spacing: -0.04em;
     }
 
-    .cta p {
-      margin: 0 auto;
-      max-width: 720px;
-      color: var(--muted);
-      line-height: 1.8;
-      font-size: 1.05rem;
+    .feature-card p {
+      margin: 0 auto 24px;
+      max-width: 760px;
+      line-height: 1.85;
+      color: rgba(235, 240, 255, 0.84);
+      font-size: 1.04rem;
     }
 
-    .cta-actions {
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 26px;
+    .phone-frame {
+      width: min(100%, 420px);
+      margin: 0 auto;
+      padding: 14px;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.30);
+    }
+
+    .phone-frame img {
+      border-radius: 22px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      margin: 0 auto;
+    }
+
+    .seo-block {
+      width: 100%;
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 28px;
+      border-radius: 26px;
+      background: rgba(9, 18, 38, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow:
+        0 18px 50px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(8px);
+    }
+
+    .seo-block h2 {
+      margin: 0 0 16px;
+      font-size: clamp(1.8rem, 4.8vw, 2.8rem);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+    }
+
+    .seo-block p {
+      margin: 0 auto 16px;
+      max-width: 780px;
+      line-height: 1.9;
+      color: rgba(235, 240, 255, 0.84);
+      font-size: 1.04rem;
     }
 
     .footer {
-      padding: 24px 0 44px;
-      text-align: center;
-      color: var(--soft);
+      padding: 18px 0 38px;
+      color: rgba(210, 220, 255, 0.68);
       font-size: 0.95rem;
+      text-align: center;
     }
 
-    @media (max-width: 980px) {
+    @media (max-width: 760px) {
       .hero {
-        grid-template-columns: 1fr;
-        min-height: auto;
-        padding-top: 20px;
+        padding-top: 28px;
       }
 
       .feature-card,
-      .feature-card.reverse {
-        grid-template-columns: 1fr;
+      .seo-block {
+        padding: 22px;
       }
 
-      .feature-card.reverse .feature-text,
-      .feature-card.reverse .feature-image {
-        order: initial;
-      }
-
-      .info-strip {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .page {
-        width: min(100% - 20px, 1180px);
-      }
-
-      .nav {
-        align-items: flex-start;
+      .hero-actions {
         flex-direction: column;
       }
 
-      .hero-card-inner {
-        min-height: auto;
-      }
-
-      .feature-card,
-      .cta,
-      .hero-card {
-        padding: 18px;
-      }
-
-      .hero-card-inner {
-        padding: 18px;
+      .hero-actions .btn {
+        width: 100%;
+        max-width: 340px;
       }
     }
   </style>
@@ -456,37 +286,115 @@
 <body>
   <div class="page">
     <header class="nav">
-      <a href="https://jschuerch.com/" class="brand">
-        <span class="brand-dot"></span>
-        <span>jschuerch apps</span>
-      </a>
-
-      <nav class="nav-links">
-        <a class="nav-link" href="https://jschuerch.com/">← Back to homepage</a>
-        <a
-          class="btn btn-primary"
-          href="https://play.google.com/store/apps/details?id=ch.justin.hourlog"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Get on Google Play
-        </a>
-      </nav>
+      <a href="https://jschuerch.com/" class="brand">J. Schuerch Apps</a>
     </header>
 
     <main>
       <section class="hero">
-        <div>
-          <div class="pill">HourLog • Android app</div>
-          <h1>Track your work. Watch your earnings grow.</h1>
-          <p class="lead">
-            HourLog is a simple and clean work hours tracker built for everyday use.
-            Start a session in seconds, set your hourly wage, and instantly see how much
-            you have earned today and this month. It is made for people who want a fast,
-            no-nonsense way to track time and pay.
+        <div class="pill">HourLog • Android App</div>
+        <h1>Track your hours. See your earnings.</h1>
+        <p class="lead">
+          HourLog is a simple Android app for tracking work hours, hourly pay, and recent work sessions in one clean place.
+          It is built for people who want a fast and practical work hours tracker without extra clutter. You can set your hourly wage,
+          start a session in one tap, watch your live earnings update while you work, and check daily or monthly totals whenever you want.
+          If you are looking for an easy work time tracker, shift tracker, earnings tracker, or hourly wage calculator, HourLog is designed to make that process simple.
+        </p>
+
+        <div class="hero-actions">
+          <a
+            class="btn btn-primary"
+            href="https://play.google.com/store/apps/details?id=ch.justin.hourlog"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View on Google Play
+          </a>
+
+          <a class="btn btn-secondary" href="https://jschuerch.com/">
+            Back to homepage
+          </a>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="feature-card">
+          <div class="feature-tag">Live tracking</div>
+          <h2>Track your work. Watch your earnings grow.</h2>
+          <p>
+            HourLog lets you track work in real time with a clean live session view.
+            While you are working, the app shows your active timer and estimated earnings as they grow.
+            This makes it easy to stay aware of both your time and your pay during a shift.
+            Whether you are logging freelance work, part-time jobs, side gigs, or regular shifts,
+            the live tracking screen gives you a quick and clear overview without distractions.
           </p>
 
-          <div class="hero-actions">
+          <div class="phone-frame">
+            <img
+              src="HourLog_Screenshot_1_FINAL.png"
+              alt="HourLog screenshot showing live work tracking, current timer, and live earnings."
+            />
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-tag">Quick setup</div>
+          <h2>Set your hourly wage in seconds</h2>
+          <p>
+            Getting started with HourLog is fast and simple. Just enter your hourly wage and you are ready to begin tracking.
+            The dashboard gives you a clean overview of your current setup, your start button, and your main work tracking controls.
+            This makes HourLog useful as a daily work hours tracker for anyone who wants to start logging time quickly,
+            without complicated settings or unnecessary steps. It is designed to be simple enough for everyday use and practical enough for real work.
+          </p>
+
+          <div class="phone-frame">
+            <img
+              src="HourLog_Screenshot_2_FINAL.png"
+              alt="HourLog screenshot showing the dashboard, hourly wage field, and start button."
+            />
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-tag">Session history</div>
+          <h2>All your work sessions in one place</h2>
+          <p>
+            HourLog keeps your recent work sessions organized in a clean and easy-to-read list.
+            You can quickly review when you worked, how long each session lasted, and how much you earned.
+            This makes the app useful not only for live tracking, but also for checking your work history later.
+            If you want a simple Android app for tracking work sessions, reviewing shift history, and keeping your hours and earnings together,
+            HourLog gives you that overview in one place.
+          </p>
+
+          <div class="phone-frame">
+            <img
+              src="HourLog_Screenshot_3_FINAL.png"
+              alt="HourLog screenshot showing recent tracked work sessions in a list."
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="seo-block">
+          <h2>A simple work hours tracker for everyday use</h2>
+          <p>
+            HourLog is made for people who want to track their work hours and pay with as little friction as possible.
+            The app focuses on the essentials: an hourly wage field, a live timer, daily totals, monthly totals, and a recent sessions list.
+            That makes it useful as a work hours tracker, pay tracker, earnings tracker, shift tracker, and time tracking app for Android.
+          </p>
+          <p>
+            Many time tracking apps try to do too much, but HourLog is intentionally simple.
+            It is built for quick use, clear numbers, and a clean interface that makes sense right away.
+            If you want to log your hours, monitor your earnings, and keep a better overview of your work sessions,
+            HourLog gives you a lightweight and practical solution that is easy to use every day.
+          </p>
+          <p>
+            The app is especially helpful for freelancers, part-time workers, contractors, shift workers, and anyone who wants
+            a straightforward way to keep track of time worked and estimated earnings. By combining live tracking with session history,
+            HourLog helps you stay organized from the moment you start working to the moment you review your past sessions.
+          </p>
+
+          <div class="hero-actions" style="margin-top: 24px;">
             <a
               class="btn btn-primary"
               href="https://play.google.com/store/apps/details?id=ch.justin.hourlog"
@@ -500,135 +408,12 @@
               Back to homepage
             </a>
           </div>
-
-          <div class="hero-meta">
-            <span>Fast session tracking</span>
-            <span>Live earnings view</span>
-            <span>Daily and monthly totals</span>
-          </div>
-        </div>
-
-        <div class="hero-card">
-          <div class="hero-card-inner">
-            <div class="hero-shot">
-              <img src="HourLog_Screenshot_1_FINAL.png" alt="HourLog app screenshot showing live tracking and current earnings." />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="section-header">
-          <h2>A clean app for work hours and pay tracking</h2>
-          <p>
-            HourLog helps you keep track of your working time without extra clutter.
-            Whether you want to log short shifts, monitor earnings while you work, or
-            quickly check your totals, the app keeps everything simple and easy to read.
-          </p>
-        </div>
-
-        <div class="info-strip">
-          <div class="info-box">
-            <h4>Start fast</h4>
-            <p>Open the app, enter your hourly wage, and begin tracking in just a few taps.</p>
-          </div>
-          <div class="info-box">
-            <h4>See earnings live</h4>
-            <p>Watch your current session grow in real time while you work.</p>
-          </div>
-          <div class="info-box">
-            <h4>Stay organized</h4>
-            <p>Check daily totals, monthly totals, and recent sessions in one place.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="feature-grid">
-          <article class="feature-card">
-            <div class="feature-text">
-              <div class="feature-tag">Quick setup</div>
-              <h3>Set your hourly wage in seconds</h3>
-              <p>
-                HourLog is designed to be simple from the start. Enter your hourly wage,
-                hit start, and the app is ready to track your time and estimated pay without
-                complicated setup or unnecessary menus.
-              </p>
-            </div>
-
-            <div class="feature-image">
-              <div class="phone-frame">
-                <img src="HourLog_Screenshot_2_FINAL.png" alt="HourLog screenshot showing the clean dashboard, hourly wage field, today card, and this month card." />
-              </div>
-            </div>
-          </article>
-
-          <article class="feature-card reverse">
-            <div class="feature-image">
-              <div class="phone-frame">
-                <img src="HourLog_Screenshot_3_FINAL.png" alt="HourLog screenshot showing daily totals, monthly totals, and recent sessions list." />
-              </div>
-            </div>
-
-            <div class="feature-text">
-              <div class="feature-tag">Overview</div>
-              <h3>See your daily and monthly totals instantly</h3>
-              <p>
-                Get a quick overview of your work progress with clear daily and monthly
-                totals. Recent sessions are also easy to review, so you always know when
-                you worked and how much you earned.
-              </p>
-            </div>
-          </article>
-
-          <article class="feature-card">
-            <div class="feature-text">
-              <div class="feature-tag">Built for everyday use</div>
-              <h3>All your work sessions in one place</h3>
-              <p>
-                From quick sessions to longer work blocks, HourLog keeps your tracking flow
-                simple. It is made for people who want an easy way to log hours, keep track
-                of earnings, and review recent work without extra complexity.
-              </p>
-            </div>
-
-            <div class="feature-image">
-              <div class="phone-frame">
-                <img src="HourLog_Screenshot_3_FINAL.png" alt="HourLog screenshot showing the recent sessions list with multiple tracked work sessions." />
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="cta">
-          <h2>Start tracking your hours with HourLog</h2>
-          <p>
-            Download HourLog on Google Play and keep your work time, hourly wage,
-            and earnings organized in one clean Android app.
-          </p>
-
-          <div class="cta-actions">
-            <a
-              class="btn btn-primary"
-              href="https://play.google.com/store/apps/details?id=ch.justin.hourlog"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View on Google Play
-            </a>
-
-            <a class="btn btn-secondary" href="https://jschuerch.com/">
-              Back to homepage
-            </a>
-          </div>
         </div>
       </section>
     </main>
 
     <footer class="footer">
-      © 2025 jschuerch apps
+      © 2025 J. Schuerch Apps
     </footer>
   </div>
 </body>

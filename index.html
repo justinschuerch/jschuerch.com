@@ -6,60 +6,85 @@
   <title>HourLog</title>
   <meta name="description" content="Official website for the HourLog app." />
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
+      min-height: 100vh;
       font-family: Arial, sans-serif;
-      background: #f7f7f7;
-      color: #222;
+      color: #f5f7ff;
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
       text-align: center;
+      background:
+        radial-gradient(circle at top left, rgba(20, 90, 255, 0.22), transparent 35%),
+        radial-gradient(circle at center, rgba(0, 102, 255, 0.10), transparent 40%),
+        linear-gradient(135deg, #020814 0%, #031225 45%, #041a33 100%);
     }
 
     .container {
-      max-width: 700px;
-      padding: 40px 24px;
-      background: white;
-      border-radius: 16px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      width: min(720px, 90%);
+      padding: 48px 28px;
+      background: rgba(9, 18, 38, 0.78);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 22px;
+      box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(6px);
     }
 
     h1 {
-      margin-bottom: 12px;
-      font-size: 2.2rem;
+      margin: 0 0 14px;
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      line-height: 1.05;
+      font-weight: 800;
+      letter-spacing: -0.03em;
     }
 
     p {
-      font-size: 1.1rem;
-      line-height: 1.6;
       margin: 0;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: rgba(235, 240, 255, 0.88);
     }
 
     .small {
       margin-top: 18px;
-      font-size: 0.95rem;
-      color: #666;
+      font-size: 0.98rem;
+      color: rgba(210, 220, 255, 0.72);
     }
 
     a {
-      color: #0066cc;
+      color: #9fc3ff;
       text-decoration: none;
     }
 
     a:hover {
       text-decoration: underline;
     }
+
+    .badge {
+      display: inline-block;
+      margin-bottom: 22px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: rgba(230, 238, 255, 0.9);
+      font-size: 0.95rem;
+    }
   </style>
 </head>
 <body>
   <div class="container">
+    <div class="badge">Official app website</div>
     <h1>HourLog</h1>
     <p>This website is for the HourLog app.</p>
-    <p class="small">
-      HourLog is an app for tracking hours and pay.
-    </p>
+    <p class="small">HourLog helps you track work hours and pay.</p>
   </div>
 </body>
 </html>
